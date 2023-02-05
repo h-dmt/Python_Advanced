@@ -48,8 +48,6 @@ while colors_input:
         last = last[:len(last)-1]
         if len(first) > 0:
             colors_input.insert(mid_idx, first)
-            if len(last) > 0:
-                colors_input.insert(mid_idx + 1, last)
         if len(last) > 0:
             colors_input.insert(mid_idx, last)
 
