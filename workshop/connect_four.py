@@ -8,13 +8,15 @@
 #########################################################
 rows = 6
 cols = 7
-n_players = 2
+n_players = int(input("Select number of players:\n"))
 M = [[0 for _ in range(cols)] for _ in range(rows)]
 winning_directions = {'L': lambda r, c: [r, c - 1],  # move left
                       'R': lambda r, c: [r, c + 1],  # move right
                       'D': lambda r, c: [r + 1, c],  # move down
-                      'LD': lambda r, c: [r + 1, c - 1],  # move left-diagonal
-                      'RD': lambda r, c: [r + 1, c + 1],  # move right-diagonal
+                      'DLD': lambda r, c: [r + 1, c - 1],  # move down-left-diagonal
+                      'DRD': lambda r, c: [r + 1, c + 1],  # move down-right-diagonal
+                      'URD': lambda r, c: [r - 1, c + 1],  # move up-right-diagonal
+                      'ULD': lambda r, c: [r - 1, c - 1],  # move up-left-diagonal
                       }
 winner = False
 free_space = True
