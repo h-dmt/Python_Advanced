@@ -49,9 +49,11 @@ class Shooter:
         self.make_matrix()
 
     def make_matrix(self, ):
+
         for _ in range(self.rows):  # create matrix rows x rows
             self.M.append(input().split())
         # print(self.M)
+
         for row in range(self.rows):  # find initial position and count targets
             for col in range(self.rows):
                 if self.M[row][col] == 'A':
@@ -64,27 +66,35 @@ class Shooter:
         row_A, col_A = self.A
         r_next, c_next = next_position(direction, row_A, col_A)
         while True:
+
             if valid_direction(r_next, c_next):
                 if self.M[r_next][c_next] == 'x':
                     self.targets_shot.append([r_next, c_next])
                     self.targets_left -= 1
                     self.M[r_next][c_next] = '.'
                     break  # target shot
+
             else:  # out of the field
                 break
+
             r_next, c_next = next_position(direction, r_next, c_next)
 
     def move(self, direction, count):
+        row_A, col_A = self.A
         for step in range(count):
-            row_A, col_A = self.A
             r_next, c_next = next_position(direction, row_A, col_A)
-            if valid_direction(r_next, c_next):  # is a valid move?
-                if self.M[r_next][c_next] == 'x':
-                    break
-                else:
-                    self.M[row_A][col_A] = '.'
+            if valid_direction(r_next, c_next):  # check if inside the field
+                if self.M[r_next][c_next] == '.':  # Move only if marked with '.' !
+                    self.M[self.A[0]][self.A[1]] = '.'
                     self.A = [r_next, c_next]
                     self.M[r_next][c_next] = 'A'
+                    row_A, col_A = self.A
+                elif self.M[r_next][c_next] == 'x':  # if a target is encountered just pass through it
+                    row_A, col_A = r_next, c_next    # without occupying it's place
+            else:
+                break
+
+            #[print(*m) for m in self.M]
 
     def __repr__(self):
         if self.targets_left == 0:
@@ -108,5 +118,5 @@ for _ in range(n):
         shooter.move(direct, steps)
 
 print(shooter)
-for target in shooter.targets_shot:  # ?? Inside __repr__ ??
+for target in shooter.targets_shot:
     print(target)
