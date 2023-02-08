@@ -1,1 +1,1 @@
-# myrepo
+# SoftUni Python Advanced Repo
