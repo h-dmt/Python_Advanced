@@ -1,0 +1,71 @@
+<1> Function Dictionary Example 
+-------------------------------
+
+fist = set(int(x) for x in input().split)
+second = set(int(x) for x in input().split)
+
+functions = {
+	"Add First": lambda x: [first.add(el) for el in x],
+	"Add Second": lambda x: [second.add(el) for el in x],
+	"Remove first": lambda x: [first.discard(el) for el in x],
+	"Remove second": lamda x: [second.discard(el) for el in x],
+	"Check subset": lambda: print(True) if first.issubset(second) or second.issubset(first) else print(False) 
+}
+
+for _ in range(int(input()):
+	first_command, *data = input().split()
+	command = first_command + " " + data.pop(0)
+	
+	if data:
+		functions[command]([int(x) for x in data])
+		
+	else:
+	functions[command]()
+	
+	...
+
+<2> 
+----
+
+from functools import reduce
+
+functions = {
+	"*": lambda i: reduce(lamdda a, b: int(a) * int(b), expression[:i]),
+	"/": lambda i: reduce(lamdda a, b: int(a) / int(b), expression[:i]),
+	"-": lambda i: reduce(lamdda a, b: int(a) - int(b), expression[:i]),
+	"+": lambda i: reduce(lamdda a, b: int(a) + int(b), expression[:i]),
+	
+}
+
+
+while idx < len(expression):
+	element = expression[idx]
+	
+	if element in "*/-+":
+		result = functions[element](idx)
+
+
+	idx += 1
+
+
+<6> Hint
+--------
+
+colors = {"red", "yellow", "blue", "orange", "purple", "green"}
+req_colors = { 
+	"orange": {"red", "yellow"},
+	"purple": {"red", "blue"},
+	"green": {"yellow", "blue"}
+	}
+
+for color in set(req_colors.intersection(result)):
+	if not req_colors[color].issubset(result):
+		result.remove(color)
+		
+
+
+
+
+
+
+
