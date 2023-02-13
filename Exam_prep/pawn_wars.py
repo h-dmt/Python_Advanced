@@ -89,7 +89,7 @@ def play(color, pawn):
             quit()
         if color == 'b' and pawn[0] == 7:  # black reached end of board
             column = cols[pawn[1]]
-            square = column + '0'
+            square = column + '1'
             print(f"Game over! Black pawn is promoted to a queen at {square}.")
             quit()
     return pawn
