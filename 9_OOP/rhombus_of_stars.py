@@ -23,12 +23,5 @@ class Rhombus:
         return "\n".join(self.outprint)
 
 
-rhomb = Rhombus(9)
+rhomb = Rhombus(int(input()))
 print(rhomb)
-
-
-
-
-
-
-
