@@ -9,10 +9,9 @@ class Rhombus:
         def create_figure():
             row = 1
             lower_part = False
+
             while row > 0:
-                spaces = ' ' * (self.n - row)
-                stars = '* ' * row
-                self.outprint.append(f"{spaces}{stars}")
+                self.outprint.append(f"{' ' * (self.n - row)}{'* ' * row}")
                 if row == self.n:
                     lower_part = True
                 row = row - 1 if lower_part else (row + 1)
