@@ -2,7 +2,7 @@
 # Create a method called get_items_count() which should return the number of items in the store.
 
 class Shop:
-    def __init__(self, name, items):
+    def __init__(self, name: str, items: list):
         self.name = name
         self.items = items
 
