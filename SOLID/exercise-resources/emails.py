@@ -55,7 +55,7 @@ class Email(IEmail):
         else:
             self.__receiver = receiver
 
-    def set_content(self, content):
+    def set_content(self, content: FormattedContent):
         self.__content = content
 
     def __repr__(self):
