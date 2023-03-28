@@ -7,7 +7,7 @@ def fibonacci():
 
 
 generator = fibonacci()
-for i in range(15):
+for i in range(50):
     print(next(generator), end=' ')
 
 print()

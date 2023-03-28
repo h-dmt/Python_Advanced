@@ -1,0 +1,18 @@
+import unittest
+
+...
+
+class Test'foo'(unittest.TestCase):
+	
+	def test_'foo'_function(self):
+		self.assertTrue(...)
+		self.assertEqual(...)
+	
+
+	...
+
+if __name__ == '__main__':
+	unittest.main()
+
+
+
