@@ -90,21 +90,3 @@ class HashTable:
         result += ['}']
 
         return "".join(result)
-
-
-table = HashTable()
-
-table["name"] = "Peter"
-table["age"] = 25
-table["sex"] = "No"
-table["weight"] = 78
-table.insert("high", 183)
-
-print(table)
-table.remove("sex")
-print(table)
-print(table.get("name"))
-print(table["age"])
-print(len(table))
-table.remove_all()
-print(table)
